@@ -20,25 +20,25 @@ Download and extract this project.
 
 Import the module:
 
-```
+```PowerShell
 Import-Module POSHPubSub.psm1
 ```
 
 Create a PubSubBroker if you want to reference it later:
 
-```
+```PowerShell
 $AppBroker=New-PubSubBroker "MyApplicationBroker"
 ```
 
 Create a subscriber:
 
-```
+```PowerShell
 $AppLogSub=New-Subscription "application\logging" {Param($Data) Write-Output $Data} $AppBroker
 ```
 
 Create a published event:
 
-```
+```PowerShell
 New-Published "application\logging" "Log: Test1" $AppBroker
 ```
 
